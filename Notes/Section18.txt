@@ -1,0 +1,209 @@
+Section 18 - Advanced JS and DOM manipulation
+
+Adding event listeners to a Button 
+
+1. EventListeners : https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+Syntax: addEventListener(type, listener)
+ > 'type' is the event type to listen for. Example - https://developer.mozilla.org/en-US/docs/Web/Events 
+ > 'listener' is the object that receives a notification when an event of the specified type occurs.Such as a JavaScript function
+
+2. What are Events : https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events 
+[Sample Code] 
+for(i=0;i<document.querySelectorAll(".drum").length; i++) {
+
+    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+        alert("Hello!"); 
+    }); //Here for 'listener' we are using an anonymous function - https://www.geeksforgeeks.org/javascript-anonymous-functions/  
+
+}
+
+[Q] What is 'Higher Order Functions(HOF)'? - Functions that can take other functions as input. Many modern day languages have this like JS, java etc.
+ For an example of a HOF see 'Calculator' function below.
+ 
+function add(num1, num2){
+    return (num1 + num2);
+}
+
+function subtract(num1, num2){
+    return (num1 - num2);
+}
+
+function multiply(num1, num2){
+    return (num1 * num2);
+}
+
+function divide(num1, num2){
+    return (num1/num2);
+}
+
+function modulus(num1, num2){
+    return (num1 % num2);
+}
+
+//HOF example
+function calculator(num1, num2, operator) {
+    return operator(num1, num2);
+}
+
+Note: In the browser console, before calling a function if we type - debugger; And then hit ‘shift’ and ‘enter’ and then call the function we want to run, then it enters the DEBUG mode.
+Example :
+debugger;
+calculator(5,10,add); 
+
+———————————————————————————————
+’this’ Concept
+
+for(i=0;i<document.querySelectorAll(".drum").length; i++) {
+    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+      this.style.color = "white"; // 'this' is the identity of the button(element) that triggered the event listener. 
+    }); 
+}
+————————————————————————————
+‘switch’ statement 
+
+for(i=0;i<document.querySelectorAll(".drum").length; i++) {
+
+    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+      var buttonInnerHTML = this.innerHTML;
+
+        switch(buttonInnerHTML) {
+            case "w":
+                var crash = new Audio("sounds/crash.mp3");  
+                crash.play();
+                break;   
+                
+            case "a":
+                var tom1 = new Audio("sounds/tom-1.mp3");  
+                tom1.play();
+                break;
+          
+           default :
+                console.log("The button clicked is not found. Value - :" + buttonInnerHTML);
+                break;            
+        }
+
+    });
+
+}
+———————————————————————————————————
+JavaScript Objects
+
+Objects will have ‘Properties’ and each property will have ‘Values’ assigned. We can then access the value of a property via ObjectName.propertyName.
+Example : 
+- var bellBoy1 = { name: “Timmy”, age: 19, hasWorkPermit: true, languages: [“English”, “French”] }
+- alert(“Hello! I am your bellboy and my name is: “ + bellBoy1.name”);
+
+
+
+//Constructor Function a.k.a A Factory. Name of a factory starts in Caps.
+function BellBoy(name, age, workPermit, languages) {
+    this.name= name;
+    this.age=age;
+    this.workPermit=workPermit;
+    this.languages=languages;
+}
+
+var bellBoy1 = new BellBoy("Ram", 23, true, ["English", "French"]);
+var bellBoy2 = new BellBoy("Ravan", 28, true, ["English", "Spanish"]);
+
+console.log(BellBoy1.name);
+console.log(BellBoy2.name);
+
+————————————————————————————————————
+Objects, their Methods and Dot Notation
+- We can have an anonymous function as a property value of a Constructor function or Factory.
+- Example :
+function BellBoy(name, age, workPermit, languages) {
+    this.name= name;
+    this.age=age;
+    this.workPermit=workPermit;
+    this.languages=languages;
+    this.moveSuitcase = function() {
+	alert(“May I take your suitcase?”);
+	pickUpSuitcase();
+        move();
+   }
+}
+
+var bellBoy1 = new BellBoy("Ram", 23, true, ["English", "French"]);
+bellBoy1.moveSuitcase();
+———————————————————————————————————————
+Using Keyboard event listeners to check for Key Presses.
+
+// Implementation to make sound on key press -  https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event 
+document.addEventListener("keydown", function(event) { 
+    console.log(event); //To see details of event that occurred and values it has captured.
+    makeSound(event.key);
+})
+
+function makeSound(key){
+    switch(key) {
+        case "w":
+            var crash = new Audio("sounds/crash.mp3");  
+            crash.play();
+            break;   
+            
+        case "a":
+            var tom1 = new Audio("sounds/tom-1.mp3");  
+            tom1.play();
+            break;
+            
+        case "s":
+        var kick = new Audio("sounds/kick-bass.mp3");  
+        kick.play();
+        break;   
+        
+        case "d":
+            var tom2 = new Audio("sounds/tom-2.mp3");  
+            tom2.play();
+            break;   
+            
+        case "j":
+            var snare = new Audio("sounds/snare.mp3");  
+            snare.play();
+            break;   
+        
+        case "k":
+            var tom3 = new Audio("sounds/tom-3.mp3");  
+            tom3.play();
+            break;
+        
+        case "l":
+            var tom4 = new Audio("sounds/tom-4.mp3");  
+            tom4.play();
+            break;   
+    
+       default :
+            console.log("The button clicked is not found. Value - :" + buttonInnerHTML);
+            break;            
+    }
+}
+
+———————————————————————————————————
+Understanding Callbacks and How to Respond to Events.
+
+- $0 in javascript : $0 returns the most recently selected element or JavaScript object and $1 returns the second most recently selected one, and so on.
+
+- High-order Function(HOF) and Callback function(CBF)
+    - HOF: Functions that are able to take other functions as inputs.
+    - CBF: Function that is called after a specified eventType occurs. It allows us to wait for an event to finish happening before it is called back and executed.
+
+Example :
+document.addEventListener(“keyDown”, respondToKey(event)); //Here ‘addEventListener’ is a Higher Order function.
+
+//Here ‘respondToKey’ is a Callback function.
+function respondToKey(event) { 
+ 	console.log(“Key pressed: “  + event.key);
+}
+
+——————————————————————————————————
+Adding Animation to Drum Websites
+
+//Function that is called to add button animation
+function addAnimation(key) {
+    document.querySelector("." + key).classList.add("pressed");
+
+    setTimeout(function() {
+        document.querySelector("." + key).classList.remove("pressed"); 
+    }, 200)
+}

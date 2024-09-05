@@ -1,0 +1,81 @@
+Section 12 :  Web Design School - Create a website that People love
+
+Introduction to Web Design
+Web design principles has 4 key pillars :
+1. Color Theory
+2. Typography
+3. User Interface Design
+4. User Experience Design
+
+Understanding Color Theory
+- Art and science of creating the right color palette for your website. 
+- Predominant Color Moods :
+    - RED: Love. Energy. Intensity
+    - YELLOW: Joy. Intellect. Attention
+    - GREEN: Freshness.Safety.Growth
+    - BLUE: Stability.Trust.Serenity
+    - PURPLE: Royalty. Wealth.Femininity
+- Combining Colors (scientific way of combining colors)
+    - Analogous Colors : Two colors that are right next to each other on the color wheel.
+        - They look incredibly harmonious and they really work well together. 
+        - Good for navigation bar and body of my website or logo and it’s background.
+￼** See image : Section12_img1.png **
+    - Complementary Colors : Two colors at opposite end of the Color wheel. This draws attention and brings out the pop.
+        - Do not try to style text and text background with these. This will look very jarring. Keep it to logos and icons.
+￼** See image : Section12_img2.png **
+	- Triadic Colors : Colors at the edge of an equilateral triangle in the Color wheel i.e evenly spaced colors in the wheel.
+OR even drawing a perfect square. 
+
+> Great website to play with and create my own color palette - https://color.adobe.com/create/color-wheel 
+> Professional designers have curated their favorite color palette that we can use - https://colorhunt.co/  
+
+Understanding Typography and How to Choose a Font
+- Serif typeface : Feet below each letter 
+** See image : Section12_img3.png **
+￼
+- Serif typeface family is further sub-divided into smaller sub-families as below (Diagram - 2:53 mins) :
+    - Old Style like Adobe Jenson
+    - Transitional like Baskerville
+    - Modern like Didot
+    - Slab-Serif like American Typewriter
+
+- Fonts have emotions too! 
+** See image : Section12_img4.png **
+￼
+- San-Serifs : This typeface has perfect right angels at their central beams.
+    - They come across as simple, friendly , approachable, novel, contemporary
+    - San-Serifs too has smaller sub-families like : 
+        - Grotesque like News Gothic
+        - Neo-Grotesque like Helvetica 
+        - Humanist like Gill Sans
+            - Humanist san-serif typeface is known as a highly readable type-face.
+        - Geometric like Futura
+    - Between Serifs and San-Serifs we will see designers going for the San-Serifs if they want to write body text which needs to be more legible and readable. 
+
+- Contracts in design : Like Body in San-serif and Heading in Serif.
+- Some of the most commonly used Serif fonts include Times New Roman, Garamond, Baskerville, Georgia, and Courier New. Some of the most popular Sans Serif fonts on the black include Arial, Helvetica, Proxima Nova, Futura, and Calibri.
+
+Manage ATTENTION with effective User Interface(UI) Design
+Key points for effective UI Design :
+1. Hierarchy : We can establish hierarchy in a number of ways like through the use of 
+    1. Colour
+    2. Size : Bigger items grab your attention
+2. Layout : Check this for example of a website with good layout - https://www.grammarly.com/ 
+    1. Good UI design includes optimal line length. 40-50 characters per line. 
+3. Alignment : One of the easiest way to make your website look more professional is to reduce the number of alignment points. 
+4. White space : Space things out and everything will suddenly look better and more expensive.
+5. Audience : Design keeping your customers/audience in mind. 
+
+User Experience(UX) Design
+UX design key points :
+ 1. Simplicity - Keep things simple. Less clutter is better.
+2. Consistency - Keep design and functionality of your webpage consistent.
+3. Reading Patterns - F pattern and the Z pattern.
+4. All Platform Design - Mobile or Desktop
+5. Avoid Dark patterns : Patterns that confuse the user and make them perform actions that are beneficial to the company or designer, but not necessarily what the user wants.
+
+Web Design in Practice 
+https://www.dailyui.co/  : To practice Web design.
+
+Practise - https://www.canva.com/ : Build your own Hotel website here 
+Done : https://www.canva.com/design/DAGMEZAQIAY/Z99b69GdmAzj9iHFHDE-sg/view?utm_content=DAGMEZAQIAY&utm_campaign=designshare&utm_medium=link&utm_source=editor 

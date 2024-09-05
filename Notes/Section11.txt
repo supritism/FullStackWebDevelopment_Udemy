@@ -1,0 +1,66 @@
+Section 11 : Bootstrap 
+
+What is Bootstrap?
+- This is an external open source website layout system. It contains pre-made CSS files that we can include in our project to use their pre-build components and styling.
+- They have a 12-column layout system build on top of flex-box that help create responsive websites.
+- To use Bootstrap we just need to know which ‘classes’ we need to add into our HTML to use the pre-build components.
+- CSS Frameworks - These are pre-made CSS files. We have many in market and popular ones are : Bootstrap(80% market share of those using CSS Frameworks), Foundation etc.
+- Bootstrap Pros and Cons :
+    - Pros : Easy and fast to use. Tons of pre-build components and consistent styling on websites. Really good browser compatibility. 
+    - Cons : Class bloating. So ideally HTML for structure and CSS for style. But using CSS frameworks like bootstrap, a lot of styling is actually going into the HTML file causing class bloating. Another downside is if you want to have control on full customization of every single component in your webpage then CSS frameworks can be very time consuming. 
+
+- How to use Bootstrap in our Projects?
+    - Via a CDN(content delivery network) link - https://getbootstrap.com/ 
+
+- Note : When you are using Bootstrap plus want to also add some custom CSS style then details of the custom style should be below the bootstrap CDN <link>. So if it is in an external style sheet then link to that external style sheet should be below the CDN  bootstrap link in the HTML <head> section. Same for Internal and inline CSS styles
+
+Excercise : (See VS code)
+- https://getbootstrap.com/docs/5.3/components/card/
+- https://getbootstrap.com/ (Check CDN link) 
+
+Bootstrap Layout
+- 12 column layout system
+￼** See image : Section11_img1.png **
+ ** See image : Section11_img2.png **
+
+- https://getbootstrap.com/docs/5.3/layout/breakpoints/ 
+- Use chrome devtools - Inspect >> Dimensions : Responsive and then we can see the pixels in the webpage and correlate to below- xxl, xl, lg ,md, sm 
+    ** See image : Section11_img3.png **
+
+- Bootstrap Breakpoints : 
+** See image : Section11_img4.png **
+￼
+- Multiple Breakpoints :
+￼** See image : Section11_img5.png **
+
+Example : ** See image : Section11_img6.png **
+
+Containers : Containers are the most basic layout element in Bootstrap and are required when using our default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. https://getbootstrap.com/docs/5.3/layout/containers/ 
+￼** See image : Section11_img7.png **
+
+Excercise : https://appbrewery.github.io/bootstrap-layout/ 
+
+Bootstrap Components
+- Pre-build and pre-styled components. Details can be found here - https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+- When using Bootstrap add below in HTML <head> section: (can also be found in Include via CDN - https://getbootstrap.com/)
+    - <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+- And for adding functionality add below just above the ending </body> tag :
+    - <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+
+- Spacing in websites (margins and padding)
+￼** See image : Section11_img8.png **
+    ** See image : Section11_img9.png **
+￼
+- Dark Mode
+    - All code modes details can be found - https://getbootstrap.com/docs/5.3/customize/color-modes/ 
+    - Color modes can be toggled globally on the <html> element, or on specific components and elements, thanks to the data-bs-theme attribute.
+￼** See image : Section11_img10.png **
+
+- Free bootstrap templates and layouts to leverage for your website : https://www.w3schools.com/bootstrap/bootstrap_templates.asp and https://getbootstrap.com/docs/5.3/examples/ 
+
+- Move It Excercise 
+    - See VS Code for details 
+    - For doing this example we can make use of ‘Docs’ , ‘Examples’ and ‘Icons’ from https://getbootstrap.com/ 
+
+[Project] TinDog Startup website 
+See VS Code for details 

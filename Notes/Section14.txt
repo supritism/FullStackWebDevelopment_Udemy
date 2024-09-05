@@ -1,0 +1,224 @@
+Section 14 : Intro to JavaScript ES6
+
+> JavaScript MDN web docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript 
+> Guide to help us with JS code structuring and style - https://github.com/rwaldron/idiomatic.js (this is a living doc) 
+
+Introduction to JS
+Diff b/w Java and JS? 
+- Compiled object-oriented programming language : Java , C++, Swift
+- Interpreted object-oriented scripting language : JavaScript, Python 
+
+Modern JavaScript : Relatively light weight scripting language that is designed to make web development more interactive and dynamic. Can be used for front-end and backend development. It is the one language that is supported by all the browsers. It is typically used for Web development.
+
+JS Alerts - Adding Behavior to Websites
+Note: For Section 14 we will be using Chrome browser’s JS console to write and test our JS code. How to get it ?
+- Open a new chrome tab >> [View] - [Developer > JavaScript Console] 
+The JS Console is bit cumbersome to use for multi-line code. It’s mainly intended to test out a line of code. For multi-line we need to hold <Shift> key to go from one line to another. Example :
+> alert("Hello") //Hold <Shift> key. Else just entering <Enter> will execute the first line.
+> alert("World!")
+
+Hence a better option is to use Snippets for writing and testing JS in our browser. 
+- Open a new chrome tab >> [View] - [Developer > JavaScript Console] 
+- Click on [Sources] : Select ‘>>’ next to Workspace and click on ’Snippets’
+- Select ‘+ New Snippets’ and rename it as ‘index.js’
+- In this index.js file write all your JS code and then hit ‘run’ at the bottom. (It’s a right facing triangle)
+
+JS Commands :
+1. alert(“Hello”); //‘alert’ is a function. ‘Hello’ is the message. And ‘;’ means end
+
+Data Types
+1. String : Sequence of characters
+2. Numbers 
+3. Boolean : true or false
+** See image : Section14_img1.png **
+￼
+JS Variables
+‘var’ is the keyword for variable/data container. We can change the value we have assigned to a variable. 
+
+Example :
+var myName = prompt("What is your name? ");
+alert(myName);
+myName = “Sohum”;
+alert(myName);
+
+JS Variables Excercise
+function test() {
+    var a = "3";
+    var b = "8";
+    
+/***********Do not change the code above 👆*******/
+var c = a;
+a = b;
+b = c;
+
+/***********Do not change the code below 👇*******/
+
+    console.log("a is " + a);
+    console.log("b is " + b);
+}
+
+test(); //Now call and run the above function
+
+Naming and Naming conventions for JS
+Best practices : 
+1. Give your variables meaningful names.
+2. Variable names cannot contain spaces.
+3. Variables can only contain letters, numbers, _ and $
+4. In this bootcamp, Angela will be giving variable names using camel casing i.e start with lowercase word and then subsequent ones are uppercase. Example : var userScoreFinal = 100;
+
+Note : In the  browser JS Console, clearing the console will not erase values set in variables recently. To do that, we need to right click on the browser reload sign and select - ‘Empty Cache and Hard Reload’.
+￼** See image : Section14_img2.png **
+
+String Concatenation
+We use ‘+’ to concatenate two strings. 
+
+Example : 
+var greetingAlert = "Hello ";
+var greetingName = prompt("What is your name?");
+
+alert(greetingAlert + greetingName);
+
+String Lengths and Retrieving number of Characters
+We can use <variable name>.length to get number of characters in a string variable.
+
+Example :
+var myName = (“Supriti Saumyadarsini Mohanty”);
+alert(myName.length); //Even ‘space’ is counted as in length
+
+Excercise :
+var myTweet = prompt("What is your tweet today?");
+var myTweetLength = myTweet.length;
+alert("My tweet is " + myTweetLength + " characters and I have " + (280 - myTweetLength) + " characters remaining.");
+
+Slicing and extracting Parts of a String
+var name = “supriti”;
+name.slice(0,5); //Where ‘0’ is the starting slice position and ‘5’ is the ending slice position. O/p - supri 
+
+Excercise : Write code which cuts a tweet at 140 characters.
+var myTweet = prompt("What is your tweet today?");
+var myTweetLength = myTweet.length;
+if(myTweetLength < 140){
+    alert("Your tweet is: " + myTweet);
+} else {
+    alert("Your tweet is: " + myTweet.slice(0,140));
+}
+
+Change Casing in Text
+Example : 
+var myName = "Supriti";
+myName.toUpperCase(); //O/P : SUPRITI
+
+var myName = "Supriti";
+myName.toLowerCase();  //O/P : supriti
+
+Exercise : Ask user for their name and then send them an alert with only first letter of their name in Caps.
+var userName = prompt("What is your name?");
+var userNameFirstLetterCaps = userName.slice(0,1).toUpperCase();
+alert("Hello " + userNameFirstLetterCaps + userName.slice(1,userName.length).toLowerCase() + "!");
+
+Basic Arithmetic and Modulo Operator in JS
+- Add : 1+2
+- Subtract : 3-1
+- Multiple : 4 *2
+- Divide : 8/5 //o/p - 1
+- Modulo : 8%5 //o/p - 3
+
+Precedence : 
+- Use brackets to make clear what is the precedence.
+    - Example: humanAge = ((dogAge -2) * 4) + 21 ;
+
+Increment and Decrement Expressions
+- Increment Expression :  ++ (Adds 1)
+- Decrement Expression : --  (Subtracts 1)
+The above is useful only to increment/decrement by 1. But if we want to do more than 1 we can use : += or -= or /= or *= or %=
+
+Example : 
+> x += 2; // x = x+2
+> x -= 5; // x = x-5
+
+Tricky question : What is value of x ?
+var y = 3;
+var x = y++; //The value of y is first assigned to x before y is incremented.
+
+Here ‘x’ is equal to 3 not 4. ‘y’ is equal to 4.
+
+Functions in JavaScript 
+Just like we have 3 primary colors - rbg or 3 core ice-cream flavors : Vanilla , Strawberry and Chocolate , we also have 3 variations/types of Functions in JS :
+1. Basic Functions with no arguments and return values.
+2. Functions that take in arguments but do not return any values.
+3. Functions that take arguments and return some values.
+
+Functions Part 1 : Creating and Calling Functions
+- Use camel casing for naming functions.
+- Creating a function : function getMilk() { ….. }
+- Calling a function : getMilk();
+
+Difference between alert() and console.log() ?
+- alert() will show you an alert pop up on the screen. 
+- console.log() will just log/print the provided details in the console so the developer can refer to them.
+
+Excercise : https://stanford.edu/~cpiech/karel/ide.html 
+[Q] Move Karel from left-bottom to right-top corner of the screen. 
+[A] 
+function main(){
+   moveFourTimes();
+   turnLeft();
+   moveFourTimes();
+}
+
+function moveFourTimes() {
+   move();
+   move();
+   move();
+   move();
+}
+
+Functions Part 2 : Parameters and Arguments
+function getMilk(money) {   
+  console.log("leaveHouse");
+  console.log("moveRight");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveRight");
+  console.log("Milk I can get: " + Math.floor(money/3)); 
+  console.log("moveLeft");
+  console.log("moveDown");
+  console.log("moveLeft");
+  console.log("enterHouse");
+}
+
+getMilk(100);
+
+Note :
+- Math.floor() method rounds a number DOWN to the nearest integer in JS
+- Math. ceil() method rounds a number UP to the nearest integer in JS
+
+Functions Part 3 : Outputs and Return Values
+function getMilk(money) {   
+  console.log("leaveHouse");
+  console.log("moveRight");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveRight");
+  console.log("Milk I can get: " + Math.floor(money/3)); 
+  console.log("moveLeft");
+  console.log("moveDown");
+  console.log("moveLeft");
+  console.log("enterHouse");
+    
+  return (money % 3); //Remainder of division giving me my change money.
+}
+
+Excercise on BMI calculator :
+//Create your function below this line. The first parameter should be the weight and the second should be the height.
+function bmiCalculator(weight, height) {
+    return Math.round((weight/Math.pow(height,2))); 
+}
+
+console.log("My BMI is: " + bmiCalculator(62,1.5));
+
+Note :
+- Math.pow(base, exponent). Example: Math.pow(height, 2) is same as (height * height)
+- Math.round(number) : This rounds it to the nearest whole number that is mathematically correct.
+
+

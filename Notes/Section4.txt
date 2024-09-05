@@ -1,0 +1,58 @@
+Section 4 : Multi-page Websites
+
+File Paths
+- Using file path we can direct our computer to look inside a specific location inside our hard drive. A file path can direct one to either a file or a folder.
+    - Absolute path : File path that is relative to the root of a computer. 
+    - Relative path : File path that is relative to something like relative to the location from where we are writing our code. These are shorter and are always valid as they are relative to the code file or directory from where we are writing.
+
+Special Characters for Relative file paths 
+1.  ../  (Two double dots) - This means to go up a level (or directory) from the current directory.
+2.  ./   (Single dot) - This means to look for a file or folder in the current directory.
+
+Web Pages (multi-page websites)
+The structure can be like this : 
+
+Webpages (Main project directory)
+    - assets (directory to store all asset files needed for website pages)
+        - images
+            - cat.png
+            - sana.png
+    - public (directory that stores html web pages for various linking pages from my main website homepage)
+        - about.html
+        - contact.html
+    - index.html (website’s home page’s html code)
+
+QQ : How to add a clickable image which when we click goes to a specific webpage? 
+<a href="./public/about.html"><img src="./assets/images/sana.png" height=200 alt="Author's clickable image" /></a>
+
+The HTML Boilerplate
+Helps understand structure of HTML. We start off with this when we create any new HTML file.
+In any .html file type ! and hit Enter to have the HTML boilerplate pre-populated.
+
+<!DOCTYPE html>
+<html lang=“en”>
+    <head>
+        <meta charset=“UTF-8”>
+        <title>My Website</title> (This content will be shown in the Browser’s tab title)
+    </head>
+
+    <body>
+        <h1> Here all your HTML content and tags will go </h1>
+    </body>
+</html>
+
+Portfolio Website (building my own website)
+Done. 
+Check in VS Code - 4.3 HTML Portfolio Project.
+
+How to Host your Website for Free with GitHub
+What is Web hosting ? - It means taking your local project’s files and folders and putting them in a webserver that is connected to the Internet. So this will make your project/content available 24/7. 
+
+How to do that using GitHub ?
+- Login to GitHub : supritism/Sana@1227
+- https://github.com/supritism/html-portfolio 
+- Steps :
+    - Create a new public repository
+    - Then navigate to that repository >> click ‘+’ and select ‘Upload files’ : Drag all files/folders from your local to here and commit.
+    - Then go to Settings >> Pages >> Select under ‘Branch’ - main /root and click Save. 
+    - Wait for 1-10 mins and on the same place you will see update “ Your site is live at https://supritism.github.io/html-portfolio/ “

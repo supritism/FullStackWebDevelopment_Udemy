@@ -1,0 +1,77 @@
+Section 7 : Intermediate CSS
+
+The Cascade - Specificity and Inheritance
+
+** See image : Section7_img1.png **
+￼
+- In the above CSS priority  chart, [1]Importance has greater priority than [2]Type which has higher priority than [3]Specificity which has higher priority than [4]Position. This is the order of importance of the BIG Category : [1] >> [2] >> [3] >> [4] 
+- Then we have the SMALL Category which are the priority rules within each Category. 
+    - For example in case of [2]Type : Inline >> Internal >> External.
+    - Similarly in case of [3]Specificity : Element ID rule >> Element attribute rule >> Element class rule >> Element rule.
+
+- Note :
+    - CSS specificity as a category is not as important as the type of CSS being applied. So rules in an ‘inline’ CSS type will take higher importance than a CSS #id selector in an internal CSS type.
+    - We can add multiple class name to an element by adding ‘space’ in between them.
+        - Example : <h1 class=“a-class b-class”> Hello World </h1>
+
+Combining CSS Selectors
+
+/* 1.Group selector rule: Here we can group two or more different selectors
+to have the same CSS rule. The selectors can be different classes, ID, element etc.
+*/
+h1,h2 {
+    color: blueviolet;
+}
+
+/* 2.Parent-Child selector rule: Here the child must be a direct descendent of the parent on the left side */
+.box > p {
+    color: firebrick;
+}
+
+/* 3.Descendent selector rule: Here we have 2 selectors with LHS being the ancestor and RHS being the descendent. The 
+descendent can be any level deep within the ancestor and doesnt have to be a direct descendent only */
+.box li {
+    color: blue;
+}
+
+/* 4.Chaining selector: Apply the CSS style/rule to instances where all selectors are TRUE */
+li.done {
+    color: seagreen;
+}
+
+/* 5.Combining combiners: See below example using #3 and #4 : Descendent and Chaining selectors */
+ul p.done {
+    font-size: 0.5rem;
+}
+
+/* 6. Selecting the nth child from a parent where only the parent has a unique class name or identification */
+Example 1 : There is an unordered list<ul> with 5 list items<li>. Only the <ul> has a class name=plan-features and none of the <li> have any unique identification. How to select and make changes to the 3rd line item.
+
+.plan-features li:nth-child(3){
+        padding-left: 30px;
+      }
+
+Example 2 : There is a flex-box container(class=pricing-container) with 3 child items(class=pricing-plan) and each item has a <ul>(class=plan-features) with 3 <li>. How to make changes to the 2nd line item in the <ul> for the 2nd child item in the flex container?
+
+.pricing-container .pricing-plan:nth-child(2) .plan-features li:nth-child(3) {
+        padding-left: 0px ;
+      }
+
+CSS Positioning (for divs and HTML elements)
+https://appbrewery.github.io/css-positioning/ 
+
+** See image : Section7_img2.png **
+￼
+1. Static positioning : HTML default flow. We can set the ‘position’ value to ‘static’ but we do not have to as it’s default.
+2. Relative positioning : Position relative to the HTML element or div’s default/static position. (Add value : ‘position: relative’)
+3. Absolute positioning: Position relative to [1] nearest positioned ancestor or [2]top left corner of webpage. (Here descendant must have ‘position: absolute’ and ancestor must have ‘position: relative’)
+    1. Has something called ‘z-index:value’ too. Can read more on that online
+4. Fixed positioning: Position relative to top left corner of browser window.(Add value : ‘position: fixed’)
+
+[Project] CSS Flag
+Power of CSS : 
+- https://diana-adrianne.com/purecss-lace/ 
+- https://pattle.github.io/simpsons-in-css/ 
+> Create ‘The Flag of Laos’ : See VS code
+
+Practise building Flags using CSS refering to:  http://lascarid.es/fussyflags/ 

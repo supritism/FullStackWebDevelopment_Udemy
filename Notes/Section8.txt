@@ -1,0 +1,63 @@
+Section 8 : Advanced CSS
+
+CSS Display
+- CSS Display types :
+    - block : This is the default display. This takes the entire full width of the browser page.
+    - inline : With this we can make two or more elements go into the same line until we can no longer fit any more onto the width of the browser page. In which case it will go to the next line. We cannot set the WIDTH and HEIGHT of inline elements as they default to the width and height of their content.
+    - inline-block : This is a combination of both the above display types. With this we can set the height and width of the element (like in ‘block’ display type) as well as Elements can go in the same line (like the ‘inline’ display type).
+    - none : If display type is ‘none’, it will make the element disappear from the screen. Like hide a button on the webpage etc.
+- Example website to understand the above display types : https://appbrewery.github.io/css-display/  
+
+What is a <span> ? - This is usually in the middle of another element. And it can have different attributes and display values. By default <span> has it’s default display value set to ‘inline’.
+Example : <p> Testing done <span class=“span-right”> RIGHT </span> always! </p> 
+
+CSS Float 
+This is another CSS property to help wrap text on webpages using float and clear. It’s important for layouts.
+
+We can use below for say an image and then the image will shift to left and the associated text will wrap around the image :  
+img {
+	float:left;
+}
+
+OR 
+- float:right;
+
+If we want to remove the wrapping for an element say for Footer element, then we can use the ‘clear’ property : 
+footer {
+	clear:left;
+}
+
+Other options are : 
+- clear:right;
+- clear:both;
+
+How to create Responsive websites
+Responsive websites are webpages that fit in based on the screen size of the device it’s being opened on like Desktop, Laptop, iPad or a phone etc. 
+
+We have 4 ways to do so:
+- Media query 
+- CSS Grid : This is used for 2-dimensional display (use ‘display: grid’ in parent div)
+    - It has properties like :
+        - grid-template-columns: 1fr 1fr;
+        - grid-template-rows: 100px 200px 100px;
+        - gap: 30px;
+        - grid-column: span 2; (This will merge two columns and show in display)
+- CSS Flexbox : This is used for 1-dimensional display (use ‘display: flex’ in parent div)
+    - It has properties like :
+        - flex: 1; (This will have equal width with everybody else)
+        - flex: 2; (This will have width twice that of others)
+- External frameworks like Bootstrap : It’s an external framework to CSS. We have to bring it in. This has a whole bunch of classes in their CSS and have pre-defined selectors and layouts. It is a 12 portion framework where full width of page is divided into 12 parts. It’s build on top of Flexbox so it’s too 1-Dimensional. 
+
+Media Queries
+@media(max-width:480px) and (min-width:319px) {
+      body {
+        background-color: yellow;
+      }
+    }
+
+[Project] Web Design Agency website
+See VS Code for reference
+
+What does the below CSS property mean?
+- text-align: justify; //space is added between words so that both edges of each line are aligned with both margins(like in newspaper) i.e Spaces out the content to line up its left and right edges to the left and right edges of the line box, except for the last line which is left aligned.
+- object-fit: cover; 

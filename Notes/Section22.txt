@@ -1,0 +1,15 @@
+Section 22 - Backend web development
+
+Full Stack - Front End development + Back end Development.
+
+In the Front-end : The only languages our web browser can understand are HTML, CSS and JavaScript. Popular JS frameworks for Front-end development are REACT, ANGULAR and Vue.
+
+
+In the Back-end : We can use any available back-end language like Java, Ruby, C#, Python, JavaScript, PHP. Common back-end framework for Java is Spring, JS is NodeJS , Ruby has Ruby on Rails etc.
+
+Full Stack Overview :
+- User sends request via Web browser(webapp). 
+- Webapp sends the request to Backend starting with a Server(available 24/7) that is listening to requests from browser all the time.
+- The Server then send it to the Application which has all the Business logic where the request is executed. 
+    - The Application can leverage a DataBase where data is stored and retrieved. 
+- Once the request is executed, the Response is then send back from the Server to the Web browser(webapp) to the end-user. 

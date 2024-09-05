@@ -1,0 +1,164 @@
+Section 15 - Intermediate JavaScript
+
+Random number generator in JS
+Excercise : Love Calculator 
+
+alert("Hello! I am your love calculator. To start with I will ask you two people's name and then calculate their love compatibility and give you the %. Lets get started!");
+prompt("Provide first person's name");
+prompt("Provide second person's name");
+
+var loveScore = Math.random(); //Give a number between 0 - 0.9999...(16 digits)
+loveScore = loveScore * 100; //This will give me a number between 0 - 99.999...
+loveScore = Math.floor(loveScore) + 1; //This will now give me a whole number between 1-100 
+
+alert(" Your love compatibility is: " + loveScore + "%");
+
+———————————————————————————————————
+Control Statements (If-Else) 
+
+Example : 
+prompt("Provide first person's name");
+prompt("Provide second person's name");
+
+var loveScore = Math.random(); //Give a number between 0 - 0.9999...(16 digits)
+loveScore = loveScore * 100; //This will give me a number between 0 - 99.999...
+loveScore = Math.floor(loveScore) + 1; //This will now give me a number between 1-100 (whole numbers)
+
+if(loveScore >= 80) {
+   alert(" Wow! Love is in the air! Your love compatibility is: " + loveScore + "%"); 
+} else {
+    alert(" Your love compatibility is: " + loveScore + "%");
+}
+
+————————————————————————————————————
+Comparators and Equality
+- Comparators (like below) give our Conditionals (like if-Else) a lot of flexibility.
+    - Comparators :
+        - === : Is equal to
+        - !== : Is not equal to
+        - > : Is greater than
+        - < : Is less than
+        - >= : Is greater than or equal to
+        - <= : Is less than or equal to 
+
+- Difference between === and == in JS (three equal sign and two equal sign) :
+    - So === checks for both the value and the datatype too.
+    - Whereas == checks only for the value.
+Example :
+var a = 1;
+var b = “2”;
+Then (a === b) is false AND (a == b) is true. 
+
+————————————————————————————————
+Combining comparators
+We have 3 combining comparators : 
+1. && - AND
+2. || - OR
+3. ! - NOT
+
+Example : 
+if(loveScore > 30 && loveScore <= 70) {
+   alert(" Your love compatibility is: " + loveScore + "%"); 
+
+—————————————————————————————————
+Collections : Working with JS Arrays
+var guestList = ["Ram", "Sam", "Geet", "Sunita", "Andy"];
+console.log(guestList.length); //Gives length of the Array
+
+- Array starts with index 0. So guestList[2] will be Geet
+- To check if an item is in a array we can use - includes
+    - guestList.includes("Andy”) //Can we used in conditional loop statements like if-else
+
+Excercise :
+var guestList = ["Ram", "Sam", "Get", "Sunita", "Andy"];
+var visitor = prompt("What is your name please?");
+
+if (guestList.includes(visitor)) {
+    alert("Welcome " + visitor + "!");
+} else {
+    alert("Sorry we didnot find you in the GuestList")
+}
+——————————————————————————————————
+Adding Elements and Intermediate Array techniques
+var arrList = [1,2,3];
+arrList.push(4); // [1,2,3,4] It gets added at the end.
+arrList.pop; // [1,2,3] Takes last item in the array and removes it. 
+
+
+Excercise : 
+//Write a function that displays 1-100 except when divisible by 3 it writes 'Fizz' and by 5 it writes 'Buzz'.Divisible by both it writes 'FizzBuzz'
+var output = [];
+var counter = 1;
+
+function fizzBuzz() {
+    if(((counter % 3) === 0) && ((counter % 5) === 0)) {
+        output.push("FizzBuzz");
+    } else if ((counter % 3) === 0) {
+        output.push("Fizz");
+    } else if ((counter % 5) === 0) {
+        output.push("Buzz");
+    } else {
+    output.push(counter);
+    }
+    
+    counter++;
+
+    console.log(output);
+}
+———————————————————————————————————
+Control Statements : While Loop
+Syntax :
+while(condition) {
+ //do something
+}
+
+Excercise : Do FizzBuzz code above using while loop. 
+
+function fizzBuzz() {
+    var output = [];
+    var counter = 1;
+
+    while(counter <= 100) {
+    if(((counter % 3) === 0) && ((counter % 5) === 0)) {
+        output.push("FizzBuzz");
+    } else if ((counter % 3) === 0) {
+        output.push("Fizz");
+    } else if ((counter % 5) === 0) {
+        output.push("Buzz");
+    } else {
+        output.push(counter);
+    }
+    counter++;
+    }
+    
+    console.log(output);
+}
+
+————————————————————————————————
+Control Statements : For Loop
+Syntax :
+for(var i = 1; i <= 100; i++ ) {
+	//Do something
+}
+
+Excercise : Fibonacci Series 
+
+function fibonacciGenerator(n) {
+    var fibArray = [0,1];
+
+    if(n === 1) {
+        return [fibArray[0]];
+    } 
+    
+    if(n === 2) {
+        return fibArray;
+    }
+    
+        while(fibArray.length < n) {
+            var arrLength = fibArray.length;
+            var nextNumber = fibArray[arrLength - 1] + fibArray[arrLength - 2];
+            fibArray.push(nextNumber);
+            arrLength++;
+        }
+        return fibArray;
+}

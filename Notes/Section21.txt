@@ -1,0 +1,47 @@
+Section 21 - Unix command line
+
+Understanding the command line 
+- Install Git Bash : MAC already comes with a bash pre-installed.
+- Understanding the command line : 
+    - Say if our Operating system is a Pistachio nut, then the kernel(which is the actual program that interfaces with the hardware like CPU, Disk, Memory. So it’s the core of our OS) is the main nut and the shell(which is the user interface) is the outer cover of the nut.
+** See image : Section21_img1.png **￼
+
+    - Now the Shell is the UI to help us interact with the Kernel and in turn the hardware of the computer.
+        - Two variants to the Shell :
+            - GUI (Graphical user interface) like MAC Finder to access and find our files.
+            - CLI (Command line interface) like the MAC terminal
+
+  - We will be using the BASH(Bourne Again Shell) shell - It is a command line interpreter for the Unix system. And unix based system are all over the place like Linux or MAC OS which runs on unix like system.
+
+Why use CLI over GUI ?
+- Simple to use using commands. Like to create a folder we just need to navigate to where we want the folder to be created and type : $ mkdir Music
+- The GUI tries to hide a lot of unnecessary or complicated stuffs like configuration files from the common user. But with CLI you can see all the folders and files. Example : 
+    - $ls -a  //Lists all files including hidden files
+    - $mkdir .Secrets //Creates a hidden file
+
+—————————————————————————————
+Command line techniques and directory navigation
+
+- $ ls : Lists all files excluding hidden files
+- $ ls -a : Lists all files including hidden files
+- $ mkdir Unix : This will create a new directory named Unix.
+- $ pwd : prints the current working directory's full path (pwd - print working directory)
+- $ cd : Stands for ‘Change directory’. It’s use to go to a desired directory or get back to a desired directory. 
+- Up and Down arrows : To navigate through all the CLI commands history and reuse them.
+- $ cd ~ : To get back to user’s root directory. For example in my Mac it’s - /Users/supritis
+- How to edit a big file navigation path easily : Click ‘Option’ and drag the ‘+’ to where you want to edit.
+- How to delete a big CLI command : Ctrl + U
+
+——————————————————————————————
+Creating, opening and removing Files through command line
+
+- $ mkdir Supriti : Makes a new directory named ’Supriti’ from the directory you are currently in.
+- $ cd Supriti/ : Go into ’Supriti’ directory.
+- $ touch Text1.txt : Creates a file named ‘Text1.txt’ in Supriti directory
+- $ open Text.txt : Open the file mentioned.
+- $ rm Text.txt : Removes the file mentioned. (BE CAREFUL WITH DESTRUCTIVE COMMANDS)
+- $ rm * : Removes all the files under the current directory. 
+- $ cd ..
+- $ rm -r Supriti/ : Removes the directory mentioned.
+
+Good site to learn more - https://www.learnenough.com/command-line-tutorial 

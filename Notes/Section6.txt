@@ -1,0 +1,84 @@
+Section 6 : CSS Properties 
+
+CSS Colors
+- Adding color to our webpage using properties like ‘background-color: xyz’ or ‘color: green’ etc.
+- To know what all colors we have you can google search ‘MDN named-color’ or directly go here - https://developer.mozilla.org/en-US/docs/Web/CSS/named-color 
+- There is a website created by designers to show what color pallet will go well with each other. You can pick any color from that pallet to select a background color or text color etc. - https://colorhunt.co/ 
+    - Interesting fact : The primary colors are RGB - Red Green Blue. Each color has a name and a Hexcode and RGB decimal. Example : lime - #00ff00 - rgb((0,255,0). RGB decimal is formed of (0/255,255/255, 0/255) - https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/ 
+    - In my CSS code, the property value for a color or background-color etc. can either be the color name or hex code value.
+
+Font Properties
+- Used to change the appearance of text in our website
+- Like : 
+    - font-weight: bold
+    - font-size: 20px
+    - font-family: sans-serif
+- Font Size :
+    - How much is 1px actually? It’s 1/96th inch. So 20px is 20/96 inch (px is pixel)
+    - Similarly we have 1pt which is 1/72 inch so it’s tiny bit bigger than a px (pt is Point and px is Pixel)
+    - 1em is 100% the size of the parent element (i.e if a <p> is under <footer> and footer font-size is 12pt and <p> is 1em then it is 12pt. If it is 2em then it’s 12*2=24pt)
+    - 1rem is 100% the size of the root element (here ‘root’ element is <html> tag)
+    - Note : px and pt are static values whereas em and rem are relative to parent and root.
+    - See example in VS Code under Section_6 - 6.1 - font-size.html
+- Font Weight :
+    - It has two values - ‘normal’ or ‘bold’
+    - Sometimes people may also use ‘lighter’ or ‘bolder’ which is relative to Parent. Lighter will minus 100 and bolder will add 100.
+    - Sometimes people use number too from 100-900 (where 100 is lighter and 900 is bolder)
+
+- Font Family :
+    - This determines what we want our text to look like.
+    - Example : h1 { font-family: Helvetica, sans-serif }
+        - Here ‘Helvetica is a MAC particular ‘Typeface’. So for windows users we have added ’sans-serif’ which is a back-up generic font type.
+            - Generic font types : sans-serif is simply a type of font where all the edges are at right angels. Similarly we have serif which has little decorations at the edges of the letter. So when wanting font like ‘Helvetica’ we can use ’san-serif’ and when using ’Times New Roman’ we can use ‘serif’ as back-up font. 
+        - Example : h1 { font-family: “Times New Roman”, serif) 
+            - If a font has many words then we need to write it within quotes to account for the spaces in between.
+    - What if we want a completely CUSTOM font that maybe the user doesn’t have?
+        - One of the best places to find free fonts is : https://fonts.google.com/ 
+	
+- Text Align :
+    - This sets the desired alignment of the text/content on the webpage.
+    - It can have values like - left, right, center, start and end(for languages that start from right to left like Arabic whereas western languages start left to right. So we can use ‘start’ and ‘end’ there)
+    - Example : h1 { text-align: center; }
+    - Documentation details : https://developer.mozilla.org/en-US/docs/Web/CSS/text-align 
+
+Inspecting CSS
+- Use Chrome browser as it has very useful Chrome dev tools to see CSS and HTML code etc.
+- Right click on a webpage and select - Inspect. The Dev tools panel will open.
+- In the Dev tools panel we will see tabs like ‘Elements’, ‘Console’ etc. 
+    - Click on ‘Elements’ tab and to your RHS you will see : ’Styles’, ‘Computed’ etc.
+        - ’Styles’ tab shows all the applied CSS styles for a specific element. To the RHS you can also see reference to  link to the href/location from where the .css file is being used.
+        - ‘Computed’ tab shows all the applied CSS styles for the specific HTML element.
+- If for a webpage I want to know all the applied CSS styles overview, I can get those details by selecting the three dots in the Dev tools section(not the chrome browser three dots). Click on the ‘three dots’ >> ‘More tools’ >> CSS overview - [Capture overview] . This will show all the Colors, Font etc. details selected for various elements on a Webpage.
+
+Assignment - https://appbrewery.github.io/css-inspection/ 
+
+The CSS Box Model 
+The box model consists of the below properties :
+- width, 
+- height, 
+- border,  (Example- border: 30px solid black; or border-width: 0px 10px 20px 30px; (top, right, botton, left) or border-width: 0px 10px; (here top and bottom will be 0px and right and left will be 10px)
+- padding and 
+- margin
+
+** See image : Section6_img1.png **
+
+Content Division Element 
+<div> Content </div> : This is the Content division element that acts as an invisible box which will contain contents in-between the opening and closing tags. 
+
+Example : 
+<body>
+	<div>
+		<p> Hello World </p>
+		<img src=“./world.png” />
+	</div>
+
+	<div>
+		<p>Good night</p>
+		<img src=“./night-world.png” />
+	</div>
+</body>
+
+We can download the chrome extension called - ‘Pesticide for Chrome’ to see these divs when doing CSS inspection using Chrome dev tools
+
+[Project] Motivational Poster website 
+See VSC for details

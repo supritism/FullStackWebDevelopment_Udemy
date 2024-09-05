@@ -1,0 +1,157 @@
+Section 19 - jQuery
+
+What is jQuery? 
+
+jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is to make it much easier to use JavaScript on your website. jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. It is designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animations, and Ajax. It is free, open-source software.
+
+Example :
+document.querySelector(“h1”)
+Vs
+$(“h1”)
+
+Document : https://jquery.com/ 
+———————————————————————————————————————
+How to incorporate jQuery into Websites?
+
+- In our main HTML file, in the <body> section we can add our jQuery CDN link just before the JS external file reference.
+- Where to get CDN link?
+    - Most commonly used one is : https://jquery.com/download/ —> Google CDN : https://developers.google.com/speed/libraries#jquery 
+    - Copy the latest snippet and past it in [index.html] body section before JS file <script> tag.
+
+- One way to ensure that jQuery library is loaded before we access the index.js file is doing above option OR below :
+    - $(document).ready(function() {
+		//add all your JS code here 
+		…..
+		…….
+		});
+————————————————————————————————————————
+How minification works to reduce file size?  
+- When we try to open the link for jQuery in the Google CDN link, we see a mess of code.
+    - script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+- What minification does is - all of the spaces, newlines and comments have been removed from the file to try and reduce its size.
+
+Website - https://www.minifier.org/ - We can minify our JS and CSS code from VSCode using this. This will make our project’s size reduced that will help load it faster in browser for whoever is accessing it. 
+
+———————————————————————————————————
+Selecting elements with jQuery
+
+- document.querySelector("h1"); when written in jQuery would be - $("h1");
+———————————————————————————————————
+Manipulating styles with jQuery
+- We can change an HTML object’s CSS style by using the .css() method that takes 2 inputs :
+    - The CSS property we want to change and
+    - Value of the CSS property.
+    - Example : $("h1").css("color", "red");
+
+- We can also get value of a CSS property using jQuery this way :
+    - console.log($("h1").css("color”));
+    - var font-size = $("h1").css(“font-size”);
+
+Note : Using .css() function, if we have 1 input in it, then we are getting the value of the property. And if we have 2 inputs, we are setting the CSS property value.
+
+BUT as a best practice we want to have style in CSS file and behavior is JS so we can add the style needed in CSS file and then as needed use it in our JS. 
+Example : 
+In index.js :  $(“h1”).addClass(“big-tile”); // Or $(“h1”).removeClass(“big-tile”);
+In style.css : 
+.big-title {
+	font-size : 10rem;
+	color : yellow;
+	font-family : cursive;
+}
+
+[Usecase #1] If we want to add or remove multiple classes : 
+- $(“h1”).addClass(“big-tile margin-50”);
+- $(“h1”).removeClass(“big-tile margin-50”);
+
+[Usecase #2] If we want to check if an element has a class applied :
+- $(“h1”).hasClass(“margin-50”);
+———————————————————————————————————
+Manipulating text with jQuery
+- We can manipulate text using .text() method and innerHTML value using .html()
+- Example : 
+    - $(“h1”).text(“Bye”); //This will update the <h1> text to Bye.
+    - $(“button”).html(“<em>Bye</em>”);  //This will update all the innerHTML value for <button> to <em>Bye</em> which will show ‘Bye’ text in italics.
+
+———————————————————————————————————
+Manipulating attributes with jQuery
+Attributes are say we have an <img> then the ‘src’ will be its attribute. Similarly for <a> the ‘href’ will be its attribute etc.
+Also any tag can have ‘class’ or ‘id’ attribute etc. 
+
+- To manipulate an attribute we use .attr()
+- Using .attr() function, if we have 1 input in it, then we are getting the value of the attribute. And if we have 2 inputs, we are setting the attribute value.
+
+Example :
+- console.log($(“img”).attr(“src”));
+- $(“a”).attr(“href”, “www.google.com”);
+
+——————————————————————————————————
+Adding Event listeners with jQuery
+It’s much easier to use event listeners with jQuery over the traditional way of using it with javascript. See below for example :
+[Example-1] : Every time here is a ‘click’ event detected on ‘h1’ element/s, it will change it’s color to red.
+$("h1").click(function() {
+    $("h1").css("color", "red");
+});
+
+[Example-2] : Every time there is a key-press event on the webpage, the ‘h1’ text get’s changed to the value of the key pressed.
+$(document).keydown(function(event) {
+    $("h1").text(event.key);
+});
+
+[Example-3 : Traditional JS way VS using jQuery]
+[Traditional] 
+for(var i = 0; i<5; i++) {
+	document.querySelectorAll(“button”)[i].addEventListener(“click”, function() {
+		document.querySelector(“h1”).style.color = “purple”;
+});
+
+[Using jQuery]
+$(“button”).click(function() {
+	$(“h1”).css(“color”, “purple”);
+});
+
+———————————————————————————————
+Adding and Removing elements with jQuery
+
+While our website is live and running, we can use jQuery is add elements on the fly using :
+1. before() - This will add the new element before the opening tag of the selected element.
+    1. Example : $(“h1”).before(“<button>New</button>”);
+2. after() - This will add the new element after the opening tag of the selected element.
+    1. Example : $(“h1”).after(“<button>New</button>”);
+3. prepend() - This will add the new element just before the content of the selected element(‘h1’ in this case).
+    1. Example : $(“h1”).prepend(“<button>New</button>”); //O/P - <h1> <button>New</button> Hello </h1>
+4. append() - This will add the new element just after the content of the selected element(‘h1’ in this case).
+    1. Example : $(“h1”).append(“<button>New</button>”); //O/P - <h1> Hello <button>New</button> </h1>
+
+We can use jQuery is remove elements on the fly using :
+1. remove() - This will remove one or all elements.
+    1. Example : $(“button”).remove(); //Removes all the buttons on the webpage
+
+———————————————————————————————
+Website animation with jQuery
+Documentation - https://api.jquery.com/category/effects/ 
+
+The jQuery library provides several techniques for adding animation to a web page like :
+1. .hide() - Hides the matched element. Example : $(“h1”).hide();
+2. .show() - Displays the matched elements. Example : $(“h1”).show();
+3. .toggle() - Toggles between hide or show for the matched element. Example : $(“h1”).toggle();
+4. .fadeOut() - Hide the matched elements by fading them to transparent.
+5. .fadeIn() - Display the matched elements by fading them to opaque.
+6. fadeToggle() - Display or hide the matched elements by animating their opacity.
+7. .slideUp() - Hide the matched elements with a sliding motion.
+8. .slideDown() - Display the matched elements with a sliding motion.
+9. .slideToggle() - Display or hide the matched elements with a sliding motion. 
+10. .animate() - Perform a custom animation of a set of CSS properties inside { }. 
+    1. Note - When using .animate() we can only put the CSS rule/s inside the { } which have a numeric value.
+    2. Example : $(“h1”).animate({opacity: 0.5 }); or $(“h1”).animate({margin: “20%” }); 
+
+If we want to have more than 1 animation happening, we can chain the techniques together. 
+- For example :  $(“h1”).slideUp().slideDown.animate({opacity: 0.5 }); //Here animation will happen in sequence from left to right values. 
+
+——————————————————————————————————
+Other Concepts  - on(), off() and one() method.
+
+1. on() - This method attaches an event to the selected element.
+    1. Example - $("p").on("click", function() { alert("The paragraph was clicked."); });
+2. off() - To remove event handlers, use the off() method. 
+    1. Example - $("p").off("click");
+3. one() - To attach an event that only runs once and then removes itself.

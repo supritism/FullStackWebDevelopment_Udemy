@@ -1,0 +1,81 @@
+Section 5 : Introduction to CSS
+
+CSS - Cascading style sheet.
+There are many Style sheet languages but the most important one when developing websites is - Cascading SS.
+
+We basically want HTML to focus on the content without having to worry about the styling, color , font etc for the website. And this is what will be owned by CSS.
+
+Example website - https://appbrewery.github.io/just-add-css/ (Click on ’Toggle CSS’ button and see CSS being added) 
+
+How to add CSS?
+Three ways to add CSS into an HTML website : 
+1. Inline : <tag style=“css” />  (Useful when we want to target a single element) 
+2. Internal : <style> css </style>  (Useful when we want to target a single webpage)
+3. External : <link href=“file.css” rel=“stylesheet” />   (Useful when we want to target multi-page websites)
+
+Inline CSS Example :
+- <html style=“background: blue”> Code </html> // Here ‘style’ is attribute , ‘background’ is property and ‘blue’ is value.
+
+Internal CSS Example : (this uses a special HTML tag called <style> css code  </style> )
+<head>
+ 	 <style>
+   		 h1 {  //‘h1’ is a selector
+			color: red;  //CSS property and value
+			}
+  	</style>
+</head>
+
+External CSS Example : (this uses a special HTML tag called <link /> which has ‘rel’ and ‘href’ )
+<head>
+	<link rel="stylesheet" href="./style.css"/>
+</head>
+
+And it’s inside ‘style.css’ where all my CSS code will go into.
+
+CSS Selectors
+What is a CSS Selector ? 
+	h1 {
+		color: blue
+		}
+In the above example we have ‘h1’ as the CSS selector. It’s the part that selects the HTML in order to apply the rules that go in between the curly braces.
+
+Type : 
+1. Element Selector : Selects a particular HTML tag to which the rule will apply. It will apply to everywhere that tag is present in the HTML doc.
+2. Class Selector : This requires a special symbol ‘.’ followed by name of the class. A class is something we can add as an attribute to any HTML element. Used for grouping elements in my HTML file to apply the same CSS rule to all of them. We can apply class to many elements in a HTML DOC.
+3. ID Selector : This requires a special symbol ‘#’ followed by value of the ID attribute. We can only apply ID attribute to a single element in a HTML doc. 
+4. Attribute Selector : This uses the html element followed by square bracket ‘[]’. Inside the [ ] we add the attribute we want the CSS rule to apply. We can add attribute with value too if needed.
+5. Universal Selector : This requires a special symbol ‘*’ and will apply the CSS rule everywhere in the HTML doc.
+
+Example :
+//Element Selector
+p {
+  color: red;
+}
+
+Class Selector 
+.note {
+  font-size: 20px;
+}
+
+ID Selector 
+#id-selector-demo {
+  color: green;
+}
+
+Attribute Selector 
+li[value="4"] {
+  color: blue;
+}
+Or 
+p[draggle] {
+	color: red;
+}
+
+Universal Selector
+* {
+  text-align: center;
+}
+
+
+[Project] Color vocal website 
+See VSC

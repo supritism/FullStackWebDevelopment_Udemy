@@ -1,0 +1,25 @@
+Section 1 : Front-End Web Development
+
+Dr Angela You - “This is the only course one needs to be a professional full stack web developer”. 
+
+Software we will be using:
+1. Visual Studio Code (VS Code)
+2. VS Code extensions (Prettier, Live Preview and vs code-icons)
+3. Google Chrome
+
+How does the Internet actually work? 
+- Client requests to go to say ‘www.google.com’ via a Browser. This request then goes to an ISP(Internet Service Provider) who are the people we pay to access the internet like AT&T,Verizon, Comcast etc. The ISP then relays the message to something called the DNS(Domain Name System) server. The DNS is like a PhoneBook with details of IP addresses of websites that the client is trying to access. (Note that every single computer connected to the Internet has an IP address.It’s like postal code for your computer. So when we want to send and receive files on the internet, each computer can be located using the unique IP address associated with each ). So once the DNS finds the IP address for Google.com, it will send it back to your browser through the ISP over the internet. Then the client computer can make a direct request to that IP address. And what lives in the IP address are the Google servers. And they will be able to send us all the data and files you need to view the google home page.
+- We have a website called - nslookup.io where we can look up the exact IP address for any Domain names or websites.
+- Internet is just a bunch of wires that connect up different computers(client computers with server computers). But on a much bigger scale connecting up all the computers in the world.
+    - But what about the Oceans diving? There are these massive under sea cables connecting all the continents on earth. We can see all of these cables here - https://www.submarinecablemap.com/ . These under sea cables are massive connecting hundreds of fiber optic fibers each of them using lasers to transmit upto 400 GB per second.
+
+How do websites actually work? 
+Data that we receive from the server computer basically consists of 3 types of files :  HTML + CSS + JavaScript 
+- HTML code file : Responsible for the Content in your website like text, images, buttons, links etc.
+- CSS code file : Responsible for Styling your website like what color will the background of the page be or shall the buttons have rounded corners etc. It targets all the contents we created using HTML and applies styling to the existing elements. 
+- JS code file : This allows your website to actually do things or have Functionality like turn a static website into something that the user can actually interact with like send email via Gmail or post your breakfast on instagram etc. 
+
+Sites to use to unblock/unstuck yourself :
+- Google
+- Stackoverflow.com
+- AI tools (at last)

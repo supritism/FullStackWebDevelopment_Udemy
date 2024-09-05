@@ -1,0 +1,51 @@
+Section 3 : Intermediate HTML
+
+The List Element
+- Unordered List with List items (Here output of List items will be shown in bullet points)
+Tag : 
+<ul>
+	<li> Value 1 </li>
+	<li> Value 2 </li>
+	<li> Value 3 </li>
+</ul>
+
+- Ordered List with List items (Here output of List items will be shown in numbers)
+Tag : 
+<ol>
+	<li> Value 1 </li>
+	<li> Value 2 </li>
+	<li> Value 3 </li>
+</ol>
+
+Note : List tags can have attributes associated with them like ‘start=value’ for OL. This will determine from which number the ordered list items will start from. Example :
+<ol start=5>
+	<li> Value 1 </li>
+	<li> Value 2 </li>
+	<li> Value 3 </li>
+</ol>
+- More documentation : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol 
+
+Nesting and Indentation
+- Nesting in List element is when we nest unordered and ordered lists within each other. See example 3.1 in MVC
+- Indentation is important when we are writing clean code and doing lot of nesting. It makes the code easy to consume and read. And gives a good  visual way to see what code is inside vs. outside of a loop, if statement or List elements.
+
+
+Anchor Element
+- Anchor Element is used to add Contents with Hyperlinks. See below :
+    - <a attribute=value>Content</a>
+    - Example : <a href=“www.amazon.com”>Amazon</a>
+        - Here the ‘href’ is the URL that the hyperlink points to. 
+- So the attribute needs to go as part of the opening tag. HTML tags have various attributes associated with them and we can see those in developer documentation. For example attributes for Anchor tag can be found here - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a 
+
+HTML Comment 
+- We can add comments for our or the code reader’s reference in our HTML code via :
+<!-- This is a line of Comment -->
+
+Image Element (also a Void element)
+Lore Epsom for pictures is - https://picsum.photos/ 
+
+<img src=value alt=value />
+- src attribute has value showing the location from where the image will be rendered.
+- alt attribute contains alternative text description for the image that will be shown. Its helpful when a visually impaired person is reading the screen. 
+
+Example : <img src=“https://picsum.photos/200/300” alt=“Dummy Image” />

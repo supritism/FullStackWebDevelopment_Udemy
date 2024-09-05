@@ -1,0 +1,103 @@
+Section 9 : Flexbox
+
+Display:Flex 
+- Previously we would create structured web displays using HTML via <table> concept.
+    - Example : 
+<table>
+	<tr class=“row”>
+		<td class=“col1> … </td>
+		<td class=“col2> … </td>
+		<td class=“col3> … </td>
+	</tr>
+</table>
+
+The <table> element is still very much in use but we should use it when we are trying to create a table. For creating responsive websites and overall page structure, we have better options like FLEXBOX etc.
+
+> Flexbox is 1-dimensional . We can have it as a 1-D Row or a 1-D Column.
+> Using flexbox all we need to do is wrap our divs inside a container and target that container in our CSS and include :
+.container {
+	display: flex; //This now becomes a different system with different rules to layout our webpage contents
+	gap: 10px; //or 1rem to be more responsive
+}
+
+> We also have display: inline-flex; //This doesn’t take the whole block width but instead just the width of the contents inside the flexbox. And then other things can go next to it as it’s now ‘inline’. 
+
+To see different ways to layout the same page content go to VS code - Section_9 : 9.0 Display Flex and click preview on index.html. Here you can see 5 different options. Click on each and then in their respective webpage, you can inspect and view the code and CSS style.
+
+Flex Direction
+- Universal selector : * 
+- flex-direction:row; (by default) Here we are setting the ‘main axis’ which is going from left to right and it is on the horizontal. Then we have the ‘cross axis’ which goes perpendicular to the main axis. In this case ‘cross-axis’ goes from top to bottom. 
+- flex-direction:column; Here the ‘main axis’ is from top to bottom and the ‘cross axis’ is from left to right. 
+- Other values are : row-reverse and column-reverse;
+
+- flex-basic:100px; This is always on the main-axis. And it is NOT set on the parent container. It’s set on the child items. So when flex-direction:row; then this will set the width of each container element to 100px. And in case of column, it will set the height of each container element to 100px.
+
+Flex Layout 
+- BEST CHEATSHEET : https://css-tricks.com/snippets/css/a-guide-to-flexbox/  
+
+Play around with below Flex layout properties using this website - https://appbrewery.github.io/flex-layout/ 
+- order:0; //value is 0 by default for all child items. We can set value for each item to change the order(This is on the child items)
+- flex-wrap: nowrap; (other values : wrap or wrap-reverse) //This is set on the parent container.
+    - With value ’wrap’, items get wrapped from top to bottom. With ‘wrap-reverse’ items are set from bottom to top. (For rows)
+    - With value ’wrap’, items get wrapped from left to right. With ‘wrap-reverse’ items are set from right to left. (For columns)
+- justify-content: flex-start; (other values are: flex-end, center, space-between, space-around, space-evenly. It distributes the content across the main axis. This is set on the parent container)
+- align-items:flex-start; (other values: flex-end, center, baseline, stretch) . Think of this as the [justify-content] version for the cross-axis
+    - For this property to work we need to set the container ‘height’ too. height: 70vh; //vh is short for viewport height which is height of our display screen and then we set the container height w.r.t that. 
+    - This is a property set on the parent container. And it distributes the contents across the cross-axis. 
+- align-self:flex-start; //(Can have same values like align-items)This is set on the child items incase we want to have a different alignment for a specific item than the group items/container. 
+- align-content: space-around; //(other values: flex-start, flex-end, space-between, space-around etc.)This is similar to ‘align-items’ which also needs ‘height’. But this one only works if ‘flex-wrap: wrap;’
+
+What’s the difference between ‘align-items’ and align-content’ ?
+- When flex-wrap: nowrap; then [align-content] is not applicable. 
+- The align-items property aligns the items inside a flex container along the cross axis just like justify-content does along the main axis.
+- When we set flex-wrap: wrap; then [align-content] value comes to play. It is for multi-line flexible boxes. It has no effect when items are in a single line.
+    - Example : https://appbrewery.github.io/flex-layout/ set : [align-content: space-around;] with [align-items:center;]
+
+- flex-flow: row wrap; //The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.
+
+Exercise : (done)
+- https://appbrewery.github.io/flexboxfroggy/ (Settings > Intermediate) 
+- Complete the 24 challenges that will move the frog to the lily pad. 
+
+Flex Sizing (shrinking and growing in a responsive situation) 
+
+Sizing Priority : 
+Content width < Width < Flex-basis < Max-width , Min-width
+
+flex-grow: 0 or 1; (0 = off, 1 = on)
+flex-shrink: 0 or 1; (0 = off, 1 = on)
+flex-basis: 0; (if we want to turn off the default ‘auto’ value which which max width to flex item with most content. ‘0’ keeps flex-items width to equal if no other override is set)
+
+Short-hands:
+- flex: 1 1 0; //grow shrink and flex-basis value from left to right
+- flex: 1; //this means grow and shrink are 1 and basis is 0
+
+Exercise: 
+[QQ] https://appbrewery.github.io/flexbox-sizing-exercise/ - Make the blue boxes have same behavior as the green boxes.
+
+Solution:
+/* Write your CSS code below to make the blue items size, grow and shrink like the green ones.*/
+
+.container {
+justify-content: space-between;
+}
+  
+.container > * {
+}
+
+.item1 {
+flex-basis:200px;
+}
+
+.item2 {
+flex-basis:200px;
+flex-shrink: 0;
+}
+
+.item3 {
+flex-basis:400px;
+flex-shrink: 0;
+}
+
+[Project] Pricing Table
+See VS Code

@@ -1,0 +1,55 @@
+Section 17 : The Dice Game Challenge.
+
+dice.html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice6.png" alt="dice image"/>
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice6.png" alt="dice image"/>
+      </div>
+    </div>
+
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
+
+Index.js (Solution!) 
+var randomNumber1 = Math.floor((Math.random() * 6) + 1);
+var diceImage1 = "./images/dice" + randomNumber1 + ".png";
+document.querySelector(".img1").setAttribute("src", diceImage1);
+
+var randomNumber2 = Math.floor((Math.random() * 6) + 1);
+var diceImage2 = "./images/dice" + randomNumber2 + ".png";
+document.querySelector(".img2").setAttribute("src", diceImage2);
+
+if(randomNumber1 === randomNumber2){
+   //It's a Draw
+   document.querySelector("h1").textContent = "Draw!"; 
+} else if(randomNumber1 > randomNumber2) {
+    //Player 1 wins
+    document.querySelector("h1").textContent = "Player 1 Wins!";
+} else {
+    //Player 2 wins
+    document.querySelector("h1").textContent = "Player 2 Wins!";
+} 
+
+***To preview it check in VSCode - Section 17 - Dice Challenge***

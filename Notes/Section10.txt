@@ -1,0 +1,117 @@
+Section 10 : CSS Grid (to help with 2-D layouts)
+
+Display: Grid
+
+Grid properties : 
+display: grid;
+grid-template-rows: 1fr 1fr; //fr=fractional ratio (or we can use 100 px or 1 rem etc.) 
+grid-template-columns: 1fr 1fr;
+
+Shorthand for [grid-template-rows] and [grid-template-columns] : 
+- grid-template: rows / columns; Example-  grid-template: 100px 200px / 400px 800px;
+
+Grid Sizing (how to size our columns and rows) 
+- grid-template-rows: 100px auto; //Here second row will take height of the row’s content (auto on rows will FIT CONTENT)
+- grid-template-columns: 200px auto; //Here second column will take 100% of the remaining page’s width.
+
+Grid Sizing demo page with different options - https://appbrewery.github.io/grid-sizing/ 
+1. Fixed Size Grid : Not responsive and has fixed size. 
+Example : 
+    .grid-container {
+      display: grid;
+      grid-template-rows: 100px 200px;
+      grid-template-columns: 400px 800px;
+    }
+
+2. Auto Size
+    1. Auto on rows will FIT CONTENT
+    2. Auto on columns will fit remaining page width by 100%
+Example : 
+    .grid-container {
+      display: grid;
+      grid-template-rows: 100px auto;
+      grid-template-columns: 200px auto;
+    }
+
+3. Fractional Size 
+    1. fr - This unit basically defines the ratio. 
+Example :
+    .grid-container {
+      display: grid;
+      grid-template-rows: 1fr 2fr; //(ratio 1:2)
+      grid-template-columns: 1fr 2fr;
+    }
+
+4. MinMax Size
+    1. This gives a minimum and maximum limit for a column. It helps make our website being responsive 
+Example:
+    .grid-container {
+      display: grid;
+      grid-template-rows: 200px 400px;
+      grid-template-columns: 200px minmax(400px, 800px);
+    }
+
+5. Repeat 
+Example :
+    .grid-container {
+      display: grid;
+      grid-template-rows: repeat(8, 200px); //Repeat 200px size 8 times . Instead of writing for 8 rows
+      grid-template-columns: repeat(8, 100px);//Repeat 200px size 8 times . Instead of writing for 8 columns
+    }
+
+Other concept :
+grid-auto-rows: 50px; //If we have defined a 2x2 grid. Adding this will mean anything that gets added after that will get an automatic sizing of 50px height. While trying to fit to the width of the existing columns.
+——————————————————————————
+Exercise : https://appbrewery.github.io/grid-sizing/test.html 
+.grid-container {
+display: grid;
+grid-template-rows: 1fr 1fr 2fr;
+grid-template-columns: auto 400px minmax(200px,500px);
+grid-auto-rows: 50px;
+}
+
+Grid Placement (how to layout items in the grid)
+** See image : Section10_img1.png **
+￼
+Terms :
+- Grid container : the parent div
+- Grid items - We can use multiple cells to create a Grid item. (See blue, green and orange items above)
+- Grid Tracks (row tracks and column tracks)
+- Grid cells : Within the intersection of the tracks we create these small units called ‘cells’. (Smallest unit in a grid and can be of different sizes)
+- Grid lines : These separate our tracks. We control it by using the gap’ property. (we have horizontal grid lines and vertical grid line) . These are lines for layouts.
+
+[Concept 1] We can use a FLEXBOX inside a CSS Grid as well. Target the ‘div’ we want and we can do :
+Example
+.item {
+      font-size: 5rem;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: blueviolet;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+[Concept 2] How to create the ‘blue’ grid in above pic?
+<selector> {
+      background-color: #00B9FF;
+      grid-column: span 2; //This is a short-hand for ‘grid-column-start’ and ‘grid-column-end’
+    }
+
+ grid-column-start: 1; //This points to left most column
+ grid-column-end: -1; //This points to right most column. Right to left will have values like -1 , -2 , -3 etc.
+
+[Concept 3] How to create the ‘orange’ grid above ?
+ <selector> {
+      background-color: #E58331;
+      grid-row: 1 / 3; //This is a short-hand for ‘grid-row-start’ and ‘grid-row-end’
+    }
+
+Another way to do above is : 
+grid-area: 1 / 3 / 3 / 4;  // row start / column start / row end / column end (you can inspect and use pesticide to see the grid lines)
+Important note : If we are using ‘grid-area’ for 1 grid item, we need to use it for the rest too in the grid container if we expect it to behave as expected. 
+
+Exercise : https://appbrewery.github.io/gridgarden/  (28 questions to practice) 
+
+[Project] Mondrian Painting 
+See VS code 

@@ -1,0 +1,38 @@
+Section 2 : Introduction to HTML
+
+Inventor of World Wide Web/Internet and HTML - Sir Tim Bernes Lee
+
+HTML - Defines content and structure of a website.
+HTML - Hyper text markup language. 
+- ‘Hyper Text’ means these are hyper links to other pages within them.
+- ‘Markup’ means here we use Tags to represent various sections within the web page. Like this part is a header or this part is a link or this is an image etc.
+
+Good resource to learn about various HTML tags and elements - https://developer.mozilla.org/en-US/docs/Web/HTML/Element 
+To check your written solution against the provided/expected solution use - https://www.diffchecker.com/ 
+
+HTML Heading Elements 
+What is a ’Tag’ vs ‘Element’?
+Ex : <h1>Hello World</h1> 
+- <h1> is the opening head tag.
+- </h1> is the closing head tag
+- The entire thing including the tag + content is called ‘HTML heading Element’
+
+- There are head tags from <h1> to <h6> in decreasing hierarchy. 
+
+
+HTML Paragraph Element
+Example of paragraph element : 
+<p>This is a paragraph1</p>
+<p>This is a paragraph2</p>
+This adds a single blank line between the 2 Paragraph elements. 
+
+Else without it, it will show as below in browser :
+This is a paragraph1 This is a paragraph2
+
+Self Closing Tags /Void Elements
+1. <br /> : Break Element (adds a line break)
+2. <hr /> : Horizontal rule Element (adds a horizontal line in-between like this ——————— )
+These are tags that are forbidden from having any content within them and these are self closing. 
+
+Exercise - [Project] Movie Making 
+See VS Code
