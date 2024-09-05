@@ -1,0 +1,33 @@
+/* Write your code here: */
+
+html {
+    font-size: 20px;
+}
+
+/* 1.Group selector rule: Here we can group two or more different selectors
+to have the same CSS rule. The selectors can be different classes, ID, element etc.
+*/
+h1,h2 {
+    color: blueviolet;
+}
+
+/* 2.Parent-Child selector rule: Here the child must be a direct descendent of the parent on the left side */
+.box > p {
+    color: firebrick;
+}
+
+/* 3.Descendent selector rule: Here we have 2 selectors with LHS being the ancestor and RHS being the descendent. The 
+descendent can be any level deep within the ancestor and doesnt have to be a direct descendent only */
+.box li {
+    color: blue;
+}
+
+/* 4.Chaining selector: Apply the CSS style/rule to instances where all selectors are TRUE */
+li.done {
+    color: seagreen;
+}
+
+/* 5.Combining combiners: Example below example using #3 and #4 : Descendent and Chaining selectors */
+ul p.done {
+    font-size: 0.5rem;
+}

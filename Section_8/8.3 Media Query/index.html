@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+TODO: Change the background color for each device
+[yellow] Mobile Devices: 319px — 480px
+[green] iPads and Tablets: 481px — 1200px
+[blue] Laptops: 1201px — 1600px
+[red] Desktops: 1601px and more
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Media Query</title>
+  <style>
+
+    /* [yellow] Mobile Devices: 319px — 480px */
+    @media(max-width:480px) and (min-width:319px) {
+      body {
+        background-color: yellow;
+      }
+    }
+
+     /* [green] iPads and Tablets: 481px — 1200px */
+     @media(max-width:1200px) and (min-width:481px) {
+      body {
+        background-color: green;
+      }
+    }
+
+     /* [blue] Laptops: 1201px — 1600px */
+     @media(max-width:1600px) and (min-width:1201px) {
+      body {
+        background-color: blue;
+      }
+    }
+
+     /* [red] Desktops: 1601px and more */
+     @media(min-width:1601px) {
+      body {
+        background-color: red;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+</body>
+
+</html>
